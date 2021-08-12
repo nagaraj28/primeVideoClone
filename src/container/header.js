@@ -46,7 +46,7 @@ export default function HeaderContainer() {
 </svg>
 </span>)
 } </div>
-        <div className={(screenWidth<=900&&!(isNavOpen))?"navlistctnr closeNav":"navlistctnr opennav"}>
+        <div className={(screenWidth<=900&&isNavOpen)?"navlistctnr closeNav":"navlistctnr opennav"}>
       <div className="navlist" >
       <Link   to="/" onClick={()=>{
         updateCurrNavItem("home");
