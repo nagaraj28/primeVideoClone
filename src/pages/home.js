@@ -8,13 +8,13 @@ import Search from "./search";
 import Fuse from 'fuse.js';
 import { Link } from "react-router-dom";
 
-export default function Home({dataCollection}){
+export default function Home({dataCollection,carousel}){
    console.log(dataCollection['series']);
 
     return (
         <>
         <HeaderContainer/>
-        <Carousel dataCollection={dataCollection}/> 
+        <Carousel dataCollection={dataCollection} carousel={carousel} /> 
         <Series dataCollection={dataCollection} />
         <Films dataCollection={dataCollection}/>
         <Footer/>

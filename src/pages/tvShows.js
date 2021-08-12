@@ -4,13 +4,13 @@ import HeaderContainer from "../container/header";
 import Series from "../container/series";
 import Footer from "../footer/footer";
 
-export default function TVShows({dataCollection}){
+export default function TVShows({dataCollection,carousel}){
 
   return (
     <>
-    <HeaderContainer/>
-    <Carousel/>
-    <Series dataCollection={dataCollection}/>
+    <HeaderContainer />
+    <Carousel  carousel={carousel}/>
+    <Series dataCollection={dataCollection}  />
     <Footer/>
 </>
 )

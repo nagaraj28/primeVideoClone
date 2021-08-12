@@ -4,11 +4,11 @@ import HeaderContainer from "../container/header";
 import Films from "../container/films";
 import Carousel from "../components/carousel/carousel";
 
-export default function Movies({dataCollection}){
+export default function Movies({dataCollection,carousel}){
   return (
     <>
     <HeaderContainer/>
-    <Carousel/>
+    <Carousel  carousel={carousel}/>
     <Films dataCollection={dataCollection}/>
     <Footer/>
 </>

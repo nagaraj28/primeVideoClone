@@ -20,7 +20,6 @@ export default function Footer(){
                </li>
                
                <li>
-                
                    © 1996-2021, Amazon.com, Inc. or its affiliate
                </li>
 

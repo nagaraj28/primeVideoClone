@@ -5,12 +5,12 @@ import Films from "../container/films";
 import Carousel from "../components/carousel/carousel";
 
 
-export default function Kids({dataCollection}){
+export default function Kids({dataCollection,carousel}){
   
   return (
     <>
     <HeaderContainer/>
-    <Carousel/>
+    <Carousel  carousel={carousel}/>
     <Films dataCollection={dataCollection}/>
     <Footer/>
 </>

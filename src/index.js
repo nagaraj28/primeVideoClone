@@ -25,7 +25,7 @@ const config = {
 }
 
 const firebase = window.firebase.initializeApp(config);
-/*seedDatabase(firebase);*/
+//seedDatabase(firebase);
 ReactDOM.render(
   <FireBaseContext.Provider value={{firebase: window.firebase}}>
       <ContextProvider>

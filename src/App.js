@@ -51,6 +51,9 @@ function App() {
     series,
     movies
   });
+  const {
+    carousel
+  }=useContent("carousel");
 
   return ( <
     >
@@ -70,7 +73,7 @@ function App() {
     ProtectedRoute exact path = "/"
     dataCollection = {
       dataCollection
-    }
+    } carousel={carousel}
     component = {
       Home
     }
@@ -78,7 +81,7 @@ function App() {
     ProtectedRoute exact path = "/movies"
     dataCollection = {
       dataCollection
-    }
+    } carousel={carousel}
     component = {
       Movies
     }
@@ -86,7 +89,7 @@ function App() {
     ProtectedRoute exact path = "/tvshows"
     dataCollection = {
       dataCollection
-    }
+    } carousel={carousel}
     component = {
       TVShows
     }
@@ -97,7 +100,7 @@ function App() {
     }
     component = {
       Movies
-    }
+    } carousel={carousel}
     /> <
     ProtectedRoute exact path = "/player"
     dataCollection = {

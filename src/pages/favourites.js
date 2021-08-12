@@ -12,14 +12,15 @@ export default function Favourites(){
    favdataCollection=favselectionMap({favseries,favmovies});    
    const [favData,setFavData] =useState([]);
    const {userId} =useContext(Context);
-   //console.log("favs");
- //  console.log(favdataCollection);
+  
       useEffect(()=>{
          favdataCollection=favselectionMap({favseries,favmovies});    
          setFavData(favdataCollection.favContentData);
       },[favdataCollection.favContentData.length!==favData.length,userId]);      
       console.log("favData")
       console.log(favData);
+      console.log("favs");
+      console.log(favdataCollection);
       
     return (
   <>
@@ -46,7 +47,6 @@ export default function Favourites(){
                   }
       </div>
     </div>
-                
     <Footer/>
   </>
     )

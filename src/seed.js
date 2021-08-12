@@ -7,7 +7,65 @@ export function seedDatabase(firebase) {
       });
     }
   
-    /* series
+
+    /*carousel
+    =======================
+    */
+
+    firebase.firestore().collection('carousel').add({
+      id: getUUID(),
+      title: 'Jack-Ryan',
+      description: '6 friends enter their second year of college and dig deeper into the notorious universe of an Indian hostel. Hostel Daze Season 2 incorporates the second chapter of hostel-life in the lives of Ankit, Jaat, Chirag, Jhantoo, Akanksha and Nabomita. The problems, the hurdles and the unlimited quirks have now doubled.',
+      genre: 'action',
+      maturity: '18',
+      slug: 'Jack-Ryan',
+      imageSrc: 'https://images-eu.ssl-images-amazon.com/images/S/pv-target-images/12cfd45ace899cc26a58d25df4cb5934464dac006f8f8dbcfbdebd5e58f56520._UR1920,1080_RI_UX400_UY225_.jpg',
+      largeImageSrc:'https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_JackRyanS2Revised/7185237b-f244-42a6-aa30-0c4bf19ed0e6._UR3000,600_SX1500_FMjpg_.jpg'
+    });
+
+    firebase.firestore().collection('carousel').add({
+      id: getUUID(),
+      title: 'Parasite',
+      description: '6 friends enter their second year of college and dig deeper into the notorious universe of an Indian hostel. Hostel Daze Season 2 incorporates the second chapter of hostel-life in the lives of Ankit, Jaat, Chirag, Jhantoo, Akanksha and Nabomita. The problems, the hurdles and the unlimited quirks have now doubled.',
+      genre: 'action',
+      maturity: '18',
+      slug: 'parasite',
+      imageSrc: 'https://images-eu.ssl-images-amazon.com/images/S/pv-target-images/12cfd45ace899cc26a58d25df4cb5934464dac006f8f8dbcfbdebd5e58f56520._UR1920,1080_RI_UX400_UY225_.jpg',
+      largeImageSrc:'https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_JackRyanS2Revised/7185237b-f244-42a6-aa30-0c4bf19ed0e6._UR3000,600_SX1500_FMjpg_.jpg'
+    });
+
+    firebase.firestore().collection('carousel').add({
+      id: getUUID(),
+      title: 'Jack-Ryan',
+      description: '6 friends enter their second year of college and dig deeper into the notorious universe of an Indian hostel. Hostel Daze Season 2 incorporates the second chapter of hostel-life in the lives of Ankit, Jaat, Chirag, Jhantoo, Akanksha and Nabomita. The problems, the hurdles and the unlimited quirks have now doubled.',
+      genre: 'action',
+      maturity: '18',
+      slug: 'Jack-Ryan',
+      imageSrc: 'https://images-eu.ssl-images-amazon.com/images/S/pv-target-images/12cfd45ace899cc26a58d25df4cb5934464dac006f8f8dbcfbdebd5e58f56520._UR1920,1080_RI_UX400_UY225_.jpg',
+      largeImageSrc:'https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_JackRyanS2Revised/7185237b-f244-42a6-aa30-0c4bf19ed0e6._UR3000,600_SX1500_FMjpg_.jpg'
+    });
+
+    firebase.firestore().collection('carousel').add({
+      id: getUUID(),
+      title: 'Parasite',
+      description: '6 friends enter their second year of college and dig deeper into the notorious universe of an Indian hostel. Hostel Daze Season 2 incorporates the second chapter of hostel-life in the lives of Ankit, Jaat, Chirag, Jhantoo, Akanksha and Nabomita. The problems, the hurdles and the unlimited quirks have now doubled.',
+      genre: 'action',
+      maturity: '18',
+      slug: 'parasite',
+      imageSrc: 'https://images-eu.ssl-images-amazon.com/images/S/pv-target-images/12cfd45ace899cc26a58d25df4cb5934464dac006f8f8dbcfbdebd5e58f56520._UR1920,1080_RI_UX400_UY225_.jpg',
+      largeImageSrc:'https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_JackRyanS2Revised/7185237b-f244-42a6-aa30-0c4bf19ed0e6._UR3000,600_SX1500_FMjpg_.jpg'
+    });
+    firebase.firestore().collection('carousel').add({
+      id: getUUID(),
+      title: 'Jack-Ryan',
+      description: '6 friends enter their second year of college and dig deeper into the notorious universe of an Indian hostel. Hostel Daze Season 2 incorporates the second chapter of hostel-life in the lives of Ankit, Jaat, Chirag, Jhantoo, Akanksha and Nabomita. The problems, the hurdles and the unlimited quirks have now doubled.',
+      genre: 'action',
+      maturity: '18',
+      slug: 'Jack-Ryan',
+      imageSrc: 'https://images-eu.ssl-images-amazon.com/images/S/pv-target-images/12cfd45ace899cc26a58d25df4cb5934464dac006f8f8dbcfbdebd5e58f56520._UR1920,1080_RI_UX400_UY225_.jpg',
+      largeImageSrc:'https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_JackRyanS2Revised/7185237b-f244-42a6-aa30-0c4bf19ed0e6._UR3000,600_SX1500_FMjpg_.jpg'
+    });
+     /* series
       ============================================ */
     //comedy
     firebase.firestore().collection('series').add({

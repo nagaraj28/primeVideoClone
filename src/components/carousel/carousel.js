@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import classes from "./carousel.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { useWindowDimensions } from "../../hooks";
+import { Context } from "../../context/Context";
+import { useHistory } from "react-router-dom";
 
 
 function SampleNextArrow(props) {
@@ -49,11 +51,14 @@ function Arrow(props) {
 }
 
 
-export default function Carousel() {
+export default function Carousel({carousel}) {
 
   console.log("width of screen",useWindowDimensions());
   const screenWidth=useWindowDimensions();
   const [currentSlideIndex,setCurrentSlideIndex] = useState(0);
+
+  const {playerItemUtil}=useContext(Context);
+  const history = useHistory();
 
   const settings = {
     dots: true,
@@ -75,27 +80,19 @@ export default function Carousel() {
   };
 
   console.log("slideindx",currentSlideIndex)
-
+console.log(carousel);
     return (
           <Slider {...settings}> 
-             <img   
-            src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_SherniLaunch/928cf8f5-d21f-4999-b2e7-7aac6b1e059b._UR3000,600_SX1500_FMwebp_.jpeg"
-            alt=" " height={screenWidth<=1220?250:""}
-          />   <img   
-          src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_SherniLaunch/928cf8f5-d21f-4999-b2e7-7aac6b1e059b._UR3000,600_SX1500_FMwebp_.jpeg"
-          alt=" " height={screenWidth<=1220?250:""}
-        />   <img   
-        src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_SherniLaunch/928cf8f5-d21f-4999-b2e7-7aac6b1e059b._UR3000,600_SX1500_FMwebp_.jpeg"
-        alt=" " height={screenWidth<=1220?250:""}
-      />   <img   
-      src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_SherniLaunch/928cf8f5-d21f-4999-b2e7-7aac6b1e059b._UR3000,600_SX1500_FMwebp_.jpeg"
-      alt=" " height={screenWidth<=1220?250:""}
-    />   <img   
-    src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_SherniLaunch/928cf8f5-d21f-4999-b2e7-7aac6b1e059b._UR3000,600_SX1500_FMwebp_.jpeg"
-    alt=" " height={screenWidth<=1220?250:""}
-  />
-       
-        
+{
+            carousel.map(dataItem=>{
+             return  <img  key={dataItem.id}
+              src={dataItem.largeImageSrc}
+              alt={dataItem.slug} height={screenWidth<=1220?250:""} onClick={()=>{
+                history.push("/player");
+                playerItemUtil(dataItem,"movies");
+              }} />
+            })
+          }
           </Slider>
        );
 }
@@ -139,3 +136,21 @@ export default function Carousel() {
     </div>
 
       */
+
+
+    /*
+
+     <img   
+          src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_SherniLaunch/928cf8f5-d21f-4999-b2e7-7aac6b1e059b._UR3000,600_SX1500_FMwebp_.jpeg"
+          alt=" " height={screenWidth<=1220?250:""}
+        />   <img   
+        src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_SherniLaunch/928cf8f5-d21f-4999-b2e7-7aac6b1e059b._UR3000,600_SX1500_FMwebp_.jpeg"
+        alt=" " height={screenWidth<=1220?250:""}
+      />   <img   
+      src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_SherniLaunch/928cf8f5-d21f-4999-b2e7-7aac6b1e059b._UR3000,600_SX1500_FMwebp_.jpeg"
+      alt=" " height={screenWidth<=1220?250:""}
+    />   <img   
+    src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_SherniLaunch/928cf8f5-d21f-4999-b2e7-7aac6b1e059b._UR3000,600_SX1500_FMwebp_.jpeg"
+    alt=" " height={screenWidth<=1220?250:""} 
+
+    */
