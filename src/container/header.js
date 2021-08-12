@@ -19,14 +19,15 @@ export default function HeaderContainer() {
         updateCurrNavItem("home");
       }}>primevideo</Header.Logo></Link>
      <div className="nav-list-ctnr" onClick={()=>{
-       updateNav();
+       if(screenWidth<=900)
+        updateNav();
      }}>
      <div className="browseitem" onClick={()=>{
        updateNav();
      }}>
         <span className="brse-item">Browse</span>
       {
-    !(isNavOpen)?(<span className="drpdwnup">
+    (isNavOpen)?(<span className="drpdwnup">
                       <svg width="40" height="17" xmlns="http://www.w3.org/2000/svg"><g> <title>background</title> <rect fill="none" id="canvas_background" y="-1" x="-1"/></g><g> <title>Layer 1</title> <polygon transform="rotate(-180 24,24) " id="svg_1" points="0,12.438 48,12.438 24,35.562 " fill="#cccccc"/> </g></svg>
             </span>):(
 
@@ -46,22 +47,22 @@ export default function HeaderContainer() {
 </svg>
 </span>)
 } </div>
-        <div className={(screenWidth<=900&&isNavOpen)?"navlistctnr closeNav":"navlistctnr opennav"}>
+        <div className={(screenWidth<=900&&!(isNavOpen))?"navlistctnr closeNav":"navlistctnr opennav"}>
       <div className="navlist" >
       <Link   to="/" onClick={()=>{
         updateCurrNavItem("home");
       }}><span className={currNavItem==="home"?"listItem activenavtitle":"listItem"} >Home</span></Link>
+       <Link  to="/movies" onClick={()=>{
+        updateCurrNavItem("movies");
+      }}>      <span className={currNavItem==="movies"?"listItem activenavtitle":"listItem"}>
+Movies        </span>
+
+      </Link>
       <Link  to="/tvshows" onClick={()=>{
         updateCurrNavItem("tvshows");
       }}>
       <span className={currNavItem==="tvshows"?"listItem activenavtitle":"listItem"}>
 TVShows        </span>
-
-      </Link>
-      <Link  to="/movies" onClick={()=>{
-        updateCurrNavItem("movies");
-      }}>      <span className={currNavItem==="movies"?"listItem activenavtitle":"listItem"}>
-Movies        </span>
 
       </Link>
       
