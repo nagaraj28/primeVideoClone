@@ -21,7 +21,7 @@ export  const CardContainer=forwardRef(({section,type,typeVal})=>{
     const {genreUtil,currentType} = useContext(Context);
 return(
     <>
-    <div  className="cardTitle">
+    <div  className="cardTitle" style={{width:"100%"}}>
             <h3 >
               {type} in {section.title}
              </h3>
