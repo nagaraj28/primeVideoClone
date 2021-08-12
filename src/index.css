@@ -4,6 +4,8 @@ body,html{
     color:white;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
+    height: 100%;
+    overflow-x: hidden;
     position: relative;
 }
 ::placeholder{
