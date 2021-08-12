@@ -1,11 +1,9 @@
 
-body{
+body,html{
     background-color:#0f171e;
     color:white;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-    overflow-x: hidden;
-
 }
 ::placeholder{
     margin-top: 5px;
