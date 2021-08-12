@@ -18,7 +18,9 @@ export default function HeaderContainer() {
       <Link  to="/"><Header.Logo  className="logotext" style={{color:"white"}} onClick={()=>{
         updateCurrNavItem("home");
       }}>primevideo</Header.Logo></Link>
-     <div className="nav-list-ctnr">
+     <div className="nav-list-ctnr" onClick={()=>{
+       updateNav();
+     }}>
      <div className="browseitem" onClick={()=>{
        updateNav();
      }}>
@@ -44,7 +46,7 @@ export default function HeaderContainer() {
 </svg>
 </span>)
 } </div>
-        <div className={(screenWidth<=900&&isNavOpen===true)?"navlistctnr closeNav":"navlistctnr opennav"}>
+        <div className={(screenWidth<=900&&!(isNavOpen))?"navlistctnr closeNav":"navlistctnr opennav"}>
       <div className="navlist" >
       <Link   to="/" onClick={()=>{
         updateCurrNavItem("home");
