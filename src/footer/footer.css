@@ -4,7 +4,7 @@
     width: 100%;
 text-align: center;
 font-size: 13px;
-margin: 30px;
+margin:130px 45px 50px 0px;
 }
 .footer-list{
     display: flex;
@@ -13,12 +13,24 @@ margin: 30px;
     justify-content: center;
     
     }
+    .footer-logoText{
+        margin-left: 38px;
+    }
     .footer-item{
-    padding: 0 1rem;  
+    margin: 0 1rem;  
 }
+
 
 a{
     text-decoration: none;
     color: #79b8f3;
     font-size: 15px;
+}
+@media screen and (max-width:800px) {
+    .footer-list{
+        flex-direction: column;
+    }
+      .footer-item{
+        margin:0.5rem;  
+    }
 }
