@@ -75,7 +75,7 @@ export default function GridCard({dataItem}) {
           } >
         <p>included with prime</p>
      <h4>{dataItem.title}</h4>
-     <p>{dataItem.description}</p>
+     <p className="overview">{dataItem.description}</p>
         </div>
        </div>
   </div>

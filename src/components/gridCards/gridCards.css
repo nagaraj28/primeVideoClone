@@ -46,3 +46,14 @@
      position: absolute;
      top: 30%;
  }
+ 
+ .overview{
+  padding-right: 10px;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 18px;
+ }

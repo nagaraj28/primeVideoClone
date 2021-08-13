@@ -12,6 +12,15 @@
     top: 13%;
 }
 
+.firstbtnctnr{
+display:flex;
+margin-left: -25px;
+padding-right: 110px;
+}
+.secondbtnctnr{
+  display:flex;
+  margin-top: 31px;
+  }
 
 .Slide{
   height:200px !important;
@@ -64,10 +73,27 @@
 }
 
 .overview {
-  font-size: 12px;
+ /* 
   /* display: block; */
-  font-weight: 700;
-  white-space: normal;
-  line-height: 18px;
-  width: 100%
+ /* -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 12px;
+  font-weight: 500;
+  width:240px;
+  overflow: hidden;
+  white-space: nowrap;  */
+ /* line-height: 18px;*/
+ /* text-overflow: ellipsis;*/
+ padding-right: 10px;
+
+ font-size: 12px;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ display: -webkit-box;
+ -webkit-line-clamp: 3;
+ -webkit-box-orient: vertical;
+ line-height: 18px;
+ font-weight: 500;
+
 }
+

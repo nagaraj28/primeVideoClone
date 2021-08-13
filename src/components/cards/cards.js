@@ -30,9 +30,9 @@ export default function Card({dataItem,typeVal}) {
                   style={{ width: "100%", objectFit: "contain"}}  src={dataItem.imageSrc} alt={dataItem.slug} onClick={()=>{  history.push("/player")}}/>
         <div className={styles.hidden} > 
         <div className={styles.cardbtnsctnr}>
-           <div style={{display:"flex",marginRight:"6em"}}>
+           <div className={styles.firstbtnctnr} >
            <Link to="/player/playvideo">
-           <span style={{}}> 
+           <span > 
                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                width="85" height="85"
                viewBox="0 0 172 172"
@@ -41,7 +41,7 @@ export default function Card({dataItem,typeVal}) {
                  </Link>
            <span style={{ marginTop:"32px"}}>Play</span>
           </div>
-           <div style={{display:"flex",marginTop:"30px"}}>
+           <div className={styles.secondbtnctnr}>
            {
               (favData.filter(item=>(item.id===dataItem.id)).length>0)?(<span  onClick={()=>{
                  deleteFromFavourites(typeVal,dataItem.docId)
@@ -77,7 +77,6 @@ export default function Card({dataItem,typeVal}) {
                         color: "white",
                         lineHeight: "1px"}} >{dataItem.title}</h1>
    <p className={styles.overview}>{dataItem.description}</p>
-       
         </div>
         </div>
         </div>
