@@ -12,7 +12,7 @@ export default function ContextProvider({children}){
     const [currentTypeValue,setCurrentType]=useState("series");
     const [videoTypeVal,setVideoTypeVal]=useState("series");
     const [currNavItem,setCurrNavItem]=useState("home");
-    const [isNavOpen,setisNavOpen] = useState(true);
+    const [isNavOpen,setisNavOpen] = useState(false);
 
     const {firebase} = useContext(FireBaseContext);
       function profileExpand() {
