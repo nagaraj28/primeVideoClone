@@ -7,13 +7,12 @@ export default function ContextProvider({children}){
     const [genre,setGenre]  = useState(null);
     const [searchText,setSearchText]  = useState('');
     const [playerItem,setplayerItem]  = useState({});
-    const [profileName,setProfileName]=useState('SystemName');
-    const [userId,setUserId]=useState("dummy");
+    const [profileName,setProfileName]=useState(null);
+    const [userId,setUserId]=useState(null);
     const [currentTypeValue,setCurrentType]=useState("series");
     const [videoTypeVal,setVideoTypeVal]=useState("series");
     const [currNavItem,setCurrNavItem]=useState("home");
     const [isNavOpen,setisNavOpen] = useState(false);
-
     const {firebase} = useContext(FireBaseContext);
       function profileExpand() {
         console.log("profile clicked")
@@ -37,12 +36,16 @@ export default function ContextProvider({children}){
             console.log(user.uid)
             setProfileName(user.displayName);
             setUserId(user.uid);
+            localStorage.setItem("userid",user.uid);
+            localStorage.setItem("username",user.displayName);
           }
          else
          setProfileName("no-userName");
       }
       else{
-        setProfileName("SystemName");
+        setProfileName(localStorage.getItem("username"));
+        setUserId(localStorage.getItem("userid"));
+       // setProfileName("SystemName");
       }
 
     }

@@ -6,10 +6,13 @@ import { FireBaseContext } from "../context/firebase";
 import { useWindowDimensions } from "../hooks";
 import classes from "./header.css"
 export default function HeaderContainer() {
-  const {isProfileExpand,profileExpand,searchUtil,profileName,isNavOpen,updateNav,updateCurrNavItem,currNavItem} = useContext(Context);
+  const {isProfileExpand,profileExpand,searchUtil,profileName,isNavOpen,updateNav,updateCurrNavItem,currNavItem,userNameAndId} = useContext(Context);
   const {firebase} = useContext(FireBaseContext);
   const history = useHistory();
- 
+
+  if(profileName===null || profileName.length<1){
+    userNameAndId();
+  }
   console.log("width of screen",useWindowDimensions());
   const screenWidth=useWindowDimensions();
   return (
@@ -127,6 +130,8 @@ TVShows        </span>
                firebase.auth().signOut().then(()=>{
                  console.log("signout successful");
                  history.push('/signin');
+                 localStorage.removeItem("userid");
+                 localStorage.removeItem("username");
                }).catch((error)=>{
                  console.log(error);
                });

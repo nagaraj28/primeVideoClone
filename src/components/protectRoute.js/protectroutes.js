@@ -9,8 +9,8 @@ export default function ProtectedRoute({component:Component,...rest}){
 
     return (
         <Route  {...rest} render={props=>{
-            if(userId&&userId!=="dummy")
-            return (<Component {...rest}{...props}/>)
+            if(userId || localStorage.getItem("userid"))
+                        return (<Component {...rest}{...props}/>)
             else
             return (<Redirect to={
             {
