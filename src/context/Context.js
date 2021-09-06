@@ -75,7 +75,12 @@ export default function ContextProvider({children}){
     function updateCurrNavItem(text){
       setCurrNavItem(text);
     }
-  return (<Context.Provider value={{isProfileExpand,profileExpand,genre,genreUtil,searchText,searchUtil,profileName,userNameAndId,playerItem,playerItemUtil,addToFavourites,currentType,currentTypeValue,deleteFromFavourites,userId,videoTypeVal,isNavOpen,updateNav,updateCurrNavItem,currNavItem}}>
+    const deleteCredentials = ()=>{
+     setUserId(null);
+      setProfileName(null)
+    }
+    
+  return (<Context.Provider value={{isProfileExpand,profileExpand,genre,genreUtil,searchText,searchUtil,profileName,userNameAndId,playerItem,playerItemUtil,addToFavourites,currentType,currentTypeValue,deleteFromFavourites,userId,videoTypeVal,isNavOpen,updateNav,updateCurrNavItem,currNavItem,deleteCredentials}}>
         {children}
     </Context.Provider>)
 }

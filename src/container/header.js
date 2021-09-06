@@ -6,7 +6,7 @@ import { FireBaseContext } from "../context/firebase";
 import { useWindowDimensions } from "../hooks";
 import classes from "./header.css"
 export default function HeaderContainer() {
-  const {isProfileExpand,profileExpand,searchUtil,profileName,isNavOpen,updateNav,updateCurrNavItem,currNavItem,userNameAndId} = useContext(Context);
+  const {isProfileExpand,profileExpand,searchUtil,profileName,isNavOpen,updateNav,updateCurrNavItem,currNavItem,userNameAndId,deleteCredentials} = useContext(Context);
   const {firebase} = useContext(FireBaseContext);
   const history = useHistory();
 
@@ -132,6 +132,7 @@ TVShows        </span>
                  history.push('/signin');
                  localStorage.removeItem("userid");
                  localStorage.removeItem("username");
+                 deleteCredentials();
                }).catch((error)=>{
                  console.log(error);
                });
